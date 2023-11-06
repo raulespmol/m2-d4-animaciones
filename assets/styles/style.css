@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.grid {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 100px auto 50px;
+  grid-template-areas: "n" "s" "m" "f";
+}
+.grid nav {
+  grid-area: n;
+  background-color: blue;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: #FFF;
+}
+.grid section {
+  grid-area: s;
+  background-color: red;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid section .side-menu {
+  background-color: #8a8a8a;
+  height: 300px;
+  width: 50px;
+}
+.grid main {
+  grid-area: m;
+  background-color: green;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  grid-gap: 1rem;
+  /* .card {
+    background-color: #222
+  } */
+}
+.grid main div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.grid main div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.grid main .card {
+  background-color: #222;
+}
+.grid main .wide {
+  grid-column: span 2;
+  background-color: #8a8a8a;
+}
+.grid main .tall {
+  grid-row: span 2;
+  background-color: #FC0B0A;
+}
+.grid main .big {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: aqua;
+}
+.grid footer {
+  grid-area: f;
+  background-color: grey;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  .grid {
+    grid-template-rows: 60px 60px auto 300px;
+    grid-template-areas: "n" "s" "m" "f";
+  }
+  .grid nav .nav .links {
+    display: flex;
+    gap: 1rem;
+  }
+  .grid nav .nav .menu {
+    display: none;
+  }
+  .grid main {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: 90px auto;
+    grid-template-rows: 60px auto 300px;
+    grid-template-areas: "n n" "s m" "f f";
+  }
+  .grid nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .grid nav .brand {
+    margin-bottom: 1rem;
+  }
+  .grid nav .brand img {
+    height: 80px;
+  }
+  .grid nav .nav .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .grid nav .nav .menu {
+    display: none;
+  }
+  .grid main {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .grid footer .footer-content {
+    flex-direction: column;
+  }
+}
