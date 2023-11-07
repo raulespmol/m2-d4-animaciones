@@ -15,7 +15,7 @@ body {
 .grid {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 60px 60px auto 300px;
+  grid-template-rows: 60px 60px auto auto;
   grid-template-areas: "n" "s" "m" "f";
 }
 .grid nav {
@@ -221,6 +221,36 @@ body {
   align-items: center;
   justify-content: center;
 }
+.grid footer .footer-grid {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+}
+.grid footer .footer-grid .footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid footer .footer-grid .footer-col h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+.grid footer .footer-grid .footer-col ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+  margin-left: 0.5rem;
+}
+.grid footer .footer-grid .footer-col ul li {
+  text-align: center;
+}
+.grid footer .footer-grid .footer-col ul li:hover {
+  color: #FFC436;
+  cursor: pointer;
+}
 .grid .signup {
   text-decoration: none;
   background-color: #FFC436;
@@ -236,6 +266,20 @@ body {
 @media (min-width: 576px) and (max-width: 992px) {
   .grid main .gallery {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .grid footer .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .grid footer .footer-grid .footer-col {
+    display: block;
+  }
+  .grid footer .footer-grid .footer-col ul {
+    display: block;
+  }
+  .grid footer .footer-grid .footer-col ul li {
+    text-align: left;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 992px) {
@@ -292,7 +336,26 @@ body {
     position: sticky;
     top: 90vh;
   }
-  .grid footer .footer-content {
-    flex-direction: column;
+  .grid footer .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .grid footer .footer-grid .footer-col {
+    display: block;
+  }
+  .grid footer .footer-grid .footer-col ul {
+    display: block;
+  }
+  .grid footer .footer-grid .footer-col ul li {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+}
+@keyframes rotar {
+  0% {
+    transform: rotate(0), scale(1);
+  }
+  100% {
+    transform: rotate(720), scale(1.1);
   }
 }
