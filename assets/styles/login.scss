@@ -1,2 +1,106 @@
-@import './variables'
+@import './variables';
 
+//Mobile
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background-color: $primary-normal;
+  width: 100%;
+  height: 60px;
+  padding: 1rem;
+  
+  .logo {
+    img {
+      height: 35px;
+    }
+  }
+  .nav-menu {
+    display: none;
+  }
+  .nav-menu-btn {
+    display: block;
+    font-size: 2rem;
+    i:hover {
+      cursor: pointer;
+      color: $secondary-normal;
+    }
+  }
+}
+
+section {
+  min-height: calc(100vh - 60px);
+  @include flexCenter;
+  .login-box {
+    width: 350px;
+    padding: 1rem;
+    background-color: $primary-light;
+
+    @include flexColCenter;
+    gap: 2rem;
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: $secondary-normal;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      .user, .pass {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        label {
+          color: $grey-light;
+          font-size: 0.8rem;
+        }
+        input {
+          padding: 10px;
+          color: $dark;
+        }
+      }
+
+      .pass {
+        > div {
+          display: flex;
+          justify-content: space-between;
+          span {
+            font-size: 0.8rem;
+            color: $secondary-light;
+            text-align: end;
+            &:hover {
+              color: $secondary-normal;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .login-button {
+      background-color: $secondary-normal;
+      border: none;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      &:hover {
+        cursor: pointer;
+        background-color: $primary-dark;
+      }
+    }
+
+    p {
+      text-align: center;
+      a {
+        color: $secondary-normal;
+        text-decoration: none;
+      }
+    }
+  }
+}

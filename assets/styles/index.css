@@ -27,8 +27,8 @@ body {
   align-items: center;
   color: #FFF;
 }
-.grid nav .logo {
-  color: #FFF;
+.grid nav .logo img {
+  height: 35px;
 }
 .grid nav .nav-menu {
   display: none;
@@ -36,6 +36,10 @@ body {
 .grid nav .nav-menu-btn {
   display: block;
   font-size: 2rem;
+}
+.grid nav .nav-menu-btn i:hover {
+  cursor: pointer;
+  color: #FFC436;
 }
 .grid section {
   grid-area: s;

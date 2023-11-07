@@ -18,7 +18,9 @@
     align-items: center;
     color: #FFF;
     .logo {
-      color: #FFF;
+      img {
+        height: 35px;
+      }
     }
     .nav-menu {
       display: none;
@@ -26,6 +28,10 @@
     .nav-menu-btn {
       display: block;
       font-size: 2rem;
+      i:hover {
+        cursor: pointer;
+        color: $secondary-normal;
+      }
     }
   }
 
