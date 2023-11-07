@@ -4,47 +4,74 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+  transition: all 300ms ease;
 }
 
 .grid {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 50px 100px auto 50px;
+  grid-template-rows: 60px 60px auto 300px;
   grid-template-areas: "n" "s" "m" "f";
 }
 .grid nav {
   grid-area: n;
-  background-color: blue;
+  background-color: #0C356A;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #FFF;
+}
+.grid nav .logo {
+  color: #FFF;
+}
+.grid nav .nav-menu {
+  display: none;
+}
+.grid nav .nav-menu-btn {
+  display: block;
+  font-size: 2rem;
 }
 .grid section {
   grid-area: s;
-  background-color: red;
+  background-color: #0174BE;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .grid section .side-menu {
-  background-color: #8a8a8a;
-  height: 300px;
-  width: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.grid section .side-menu .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.grid section .side-menu .search input {
+  height: 30px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: none;
+}
+.grid section i {
+  font-size: 2rem;
+  color: #FFF;
+}
+.grid section i:hover {
+  cursor: pointer;
+  color: #FFC436;
 }
 .grid main {
   grid-area: m;
-  background-color: green;
+  background-color: #021630;
   padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 250px;
   grid-auto-flow: dense;
   grid-gap: 1rem;
-  /* .card {
-    background-color: #222
-  } */
 }
 .grid main .card {
   display: flex;
@@ -60,7 +87,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: grayscale(1);
+  filter: grayscale(0.8);
   transition: all 600ms ease;
 }
 .grid main .card .desc {
@@ -94,7 +121,7 @@
 }
 .grid footer {
   grid-area: f;
-  background-color: grey;
+  background-color: #222;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -102,17 +129,6 @@
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
-  .grid {
-    grid-template-rows: 60px 60px auto 300px;
-    grid-template-areas: "n" "s" "m" "f";
-  }
-  .grid nav .nav .links {
-    display: flex;
-    gap: 1rem;
-  }
-  .grid nav .nav .menu {
-    display: none;
-  }
   .grid main {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
@@ -123,28 +139,59 @@
     grid-template-rows: 60px auto 300px;
     grid-template-areas: "n n" "s m" "f f";
   }
-  .grid nav {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .grid nav .brand {
-    margin-bottom: 1rem;
-  }
-  .grid nav .brand img {
-    height: 80px;
-  }
-  .grid nav .nav .links {
+  .grid nav .nav-menu {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-  .grid nav .nav .menu {
+  .grid nav .nav-menu .login {
+    text-decoration: none;
+    color: #FFF;
+  }
+  .grid nav .nav-menu .login:hover {
+    color: #FFC436;
+  }
+  .grid nav .nav-menu .signup {
+    text-decoration: none;
+    background-color: #FFC436;
+    color: #0C356A;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+  }
+  .grid nav .nav-menu .signup:hover {
+    background-color: #FFF0CE;
+  }
+  .grid nav .nav-menu-btn {
     display: none;
   }
   .grid main {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .grid section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .grid section .side-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    height: 110vh;
+    position: sticky;
+    top: 1rem;
+  }
+  .grid section .side-menu .search {
+    order: 3;
+  }
+  .grid section .side-menu .search input {
+    display: none;
+  }
+  .grid section .up-button {
+    position: sticky;
+    top: 90vh;
   }
   .grid footer .footer-content {
     flex-direction: column;
