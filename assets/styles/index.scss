@@ -103,9 +103,7 @@
       }
 
       .us {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexColCenter;
         gap: 2rem;
         padding: 3rem 1rem;
         .us-container {
@@ -348,10 +346,7 @@
     }
 
     section {
-      display: flex;
-      flex-direction: column;
-      // justify-content: space-between;
-      align-items: center;
+      @include flexColCenter;
       .side-menu{
         display: flex;
         flex-direction: column;
@@ -394,17 +389,4 @@
       }
     }
   }
-}
-
-//Keyframes
-
-@keyframes rotar {
-  0% {
-    transform: rotate(0), scale(1);
-  }
-
-  100% {
-    transform: rotate(720), scale(1.1);
-  }
-  
 }

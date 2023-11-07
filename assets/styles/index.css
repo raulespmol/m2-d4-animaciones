@@ -375,11 +375,3 @@ body {
     margin-bottom: 1rem;
   }
 }
-@keyframes rotar {
-  0% {
-    transform: rotate(0), scale(1);
-  }
-  100% {
-    transform: rotate(720), scale(1.1);
-  }
-}
