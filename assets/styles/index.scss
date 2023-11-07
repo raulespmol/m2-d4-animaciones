@@ -359,7 +359,7 @@ body {
 @media (min-width: $large) {
   .grid {
   grid-template-columns: 90px auto;
-  grid-template-rows: 60px auto 300px;
+  grid-template-rows: 60px auto minmax(300px, auto);
   grid-template-areas: 
   'n n'
   's m'
