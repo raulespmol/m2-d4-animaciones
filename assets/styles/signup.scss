@@ -1,1 +1,123 @@
 @import './variables';
+
+//Mobile
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background-color: $primary-normal;
+  width: 100%;
+  height: 60px;
+  padding: 1rem;
+  
+  .logo {
+    img {
+      height: 35px;
+    }
+  }
+  .nav-menu {
+    display: none;
+  }
+  .nav-menu-btn {
+    display: block;
+    font-size: 2rem;
+    i:hover {
+      cursor: pointer;
+      color: $secondary-normal;
+    }
+  }
+}
+
+section {
+  min-height: calc(100vh - 60px);
+  @include flexCenter;
+  .box {
+    width: 350px;
+    padding: 1rem;
+    background-color: $primary-light;
+
+    @include flexColCenter;
+    gap: 2rem;
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: $secondary-normal;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      .user, .pass {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        label {
+          color: $grey-light;
+          font-size: 0.8rem;
+        }
+        input {
+          padding: 10px;
+          color: $dark;
+        }
+      }
+    }
+
+    .login-button {
+      background-color: $secondary-normal;
+      border: none;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      &:hover {
+        cursor: pointer;
+        background-color: $primary-dark;
+      }
+    }
+
+    p {
+      text-align: center;
+      a {
+        color: $secondary-normal;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+//Desktop
+@media (min-width: $large) {
+  nav {
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .login {
+        text-decoration: none;
+        color: #FFF;
+        &:hover {
+          color: $secondary-normal;
+        }
+      }
+    }
+    .nav-menu-btn {
+      display: none;
+    }
+    .signup {
+      text-decoration: none;
+      background-color: $secondary-normal;
+      color: $primary-normal;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      &:hover {
+        background-color: $secondary-light;
+      }
+    }
+  }
+}
