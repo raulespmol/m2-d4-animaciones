@@ -107,3 +107,32 @@ section .login-box p a {
   color: #FFC436;
   text-decoration: none;
 }
+
+@media (min-width: 992px) {
+  nav .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  nav .nav-menu .login {
+    text-decoration: none;
+    color: #FFF;
+  }
+  nav .nav-menu .login:hover {
+    color: #FFC436;
+  }
+  nav .nav-menu-btn {
+    display: none;
+  }
+  nav .signup {
+    text-decoration: none;
+    background-color: #FFC436;
+    color: #300343;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+  }
+  nav .signup:hover {
+    background-color: #ffe19a;
+  }
+}

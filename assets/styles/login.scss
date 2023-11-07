@@ -104,3 +104,35 @@ section {
     }
   }
 }
+
+//Desktop
+@media (min-width: $large) {
+  nav {
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .login {
+        text-decoration: none;
+        color: #FFF;
+        &:hover {
+          color: $secondary-normal;
+        }
+      }
+    }
+    .nav-menu-btn {
+      display: none;
+    }
+    .signup {
+      text-decoration: none;
+      background-color: $secondary-normal;
+      color: $primary-normal;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      &:hover {
+        background-color: $secondary-light;
+      }
+    }
+  }
+}
